@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Carta para mi Amor</title>
+
+    <style>
+
+        body {
+
+            background: linear-gradient(135deg, #000000, #1a0033);
+
+            color: #fff;
+
+            font-family: 'Playfair Display', serif;
+
+            text-align: center;
+
+            margin: 0;
+
+            padding: 0;
+
+            overflow: hidden;
+
+            min-height: 100vh;
+
+        }
+
+
+
+        .container {
+
+            position: fixed;
+
+            bottom: 0;
+
+            width: 100%;
+
+            height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            perspective: 1300px;
+
+            padding: 10px;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        .text-box {
+
+            width: 98%;
+
+            max-width: 1200px;
+
+            padding: 25px;
+
+            background: rgba(255, 255, 255, 0.1);
+
+            backdrop-filter: blur(10px);
+
+            border-radius: 15px;
+
+            text-align: justify;
+
+            font-size: 20px;
+
+            line-height: 1.6;
+
+            transform-origin: 50% 100%;
+
+            transform: rotateX(15deg);
+
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+        }
+
+
+
+        .text-box strong {
+
+            color: #ff69b4;
+
+            font-size: 1.2em;
+
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+
+        }
+
+
+
+        .text-box p {
+
+            margin-bottom: 1.5em;
+
+            position: relative;
+
+        }
+
+
+
+        .text-box p::first-letter {
+
+            font-size: 1.5em;
+
+            color: #ff69b4;
+
+        }
+
+
+
+        @keyframes starfield {
+
+            from {
+
+                transform: translateZ(0);
+
+            }
+
+
+
+            to {
+
+                transform: translateZ(400px);
+
+            }
+
+        }
+
+
+
+        .stars {
+
+            position: fixed;
+
+            width: 100%;
+
+            height: 100%;
+
+            z-index: -1;
+
+        }
+
+
+
+        .star {
+
+            position: absolute;
+
+            background: #fff;
+
+            border-radius: 50%;
+
+            animation: starfield 8s linear infinite;
+
+        }
+
+
+
+        @keyframes scrollText {
+
+            from {
+
+                transform: translateY(100vh) rotateX(25deg);
+
+                opacity: 0;
+
+            }
+
+
+
+            5% {
+
+                opacity: 1;
+
+            }
+
+
+
+            95% {
+
+                opacity: 1;
+
+            }
+
+
+
+            to {
+
+                transform: translateY(-100%) rotateX(25deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+
+        .heart-decoration {
+
+            position: absolute;
+
+            color: #ff69b4;
+
+            font-size: 24px;
+
+            opacity: 0.5;
+
+        }
+
+
+
+        @media screen and (max-width: 768px) {
+
+            .text-box {
+
+                width: 100%;
+
+                padding: 20px 15px;
+
+                font-size: 18px;
+
+                transform: rotateX(10deg);
+
+                max-width: none;
+
+            }
+
+
+
+            .text-box p {
+
+                margin-bottom: 1em;
+
+            }
+
+
+
+            .text-box strong {
+
+                font-size: 1.1em;
+
+            }
+
+        }
+
+
+
+        @media screen and (max-width: 480px) {
+
+            .container {
+
+                padding: 5px;
+
+            }
+
+
+
+            .text-box {
+
+                padding: 15px 12px;
+
+                font-size: 16px;
+
+                transform: rotateX(5deg);
+
+            }
+
+
+
+            .text-box p::first-letter {
+
+                font-size: 1.3em;
+
+            }
+
+
+
+            .heart-decoration {
+
+                font-size: 18px;
+
+            }
+
+        }
+
+
+
+        @media screen and (max-height: 600px) {
+
+            @keyframes scrollText {
+
+                from {
+
+                    transform: translateY(100vh) rotateX(15deg);
+
+                    opacity: 0;
+
+                }
+
+
+
+                5% {
+
+                    opacity: 1;
+
+                }
+
+
+
+                95% {
+
+                    opacity: 1;
+
+                }
+
+
+
+                to {
+
+                    transform: translateY(-100%) rotateX(15deg);
+
+                    opacity: 0;
+
+                }
+
+            }
+
+        }
+
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+
+
+<body>
+
+    <div class="stars"></div>
+
+    <div class="container">
+
+        <div class="text-box" id="letter">
+
+            <p><strong>Mi amor,</strong></p>
+
+            <p>Quiero que sepa cuánto valoro todo lo que está haciendo en este proceso. Es una mujer increíble, y
+
+                estoy profundamente agradecido por todo lo que hace por
+
+                Ian David y por nuestra familia.</p>
+
+            <p>Desde que supe que sería la madre de nuestro Ian David, he admirado la manera en que lo ha cuidado y
+
+                cómo
+
+                ha enfrentado cada cambio con tanto amor y dedicación. Su capacidad para equilibrar sus
+
+                responsabilidades
+
+                como esposa y madre es algo que nunca dejaré de valorar.</p>
+
+            <p>No olvide que ha sido la respuesta a mis oraciones desde hace mucho tiempo. Este proceso no ha sido
+
+                fácil; hemos enfrentado momentos difíciles, pero llegar hasta aquí nos recuerda la misericordia de Dios
+
+                a nuestras vidas.
+
+                Fueron casi dos años en conquista jajaja, ocho grandiosos años de novios y ahora tres de casados, han
+
+                sido los mejores, no me arrepiento de nada mi cielo.
+
+                Estoy profundamente agradecido por cada momento que hemos compartido y por tenerla a mi lado.</p>
+
+            <p>Quiero invitarla a una cena única y especial, porque será nuestra última cena como esposos antes de la
+
+                llegada de nuestro bebé. Estoy emocionado por este nuevo capítulo que vamos a comenzar juntos. Gracias
+
+                por ser la mujer maravillosa que es.</p>
+
+            <p><strong>La amo con todo mi corazón.</strong></p>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const letter = document.getElementById("letter");
+
+            const isMobile = window.innerWidth <= 768;
+
+            letter.style.animation = `scrollText ${isMobile ? 35 : 45}s linear forwards`;
+
+
+
+            const starsContainer = document.querySelector('.stars');
+
+            for (let i = 0; i < 500; i++) {
+
+                const star = document.createElement('div');
+
+                star.className = 'star';
+
+                star.style.width = Math.random() * 3 + 'px';
+
+                star.style.height = star.style.width;
+
+                star.style.left = Math.random() * 100 + '%';
+
+                star.style.top = Math.random() * 100 + '%';
+
+                star.style.animationDelay = Math.random() * 8 + 's';
+
+                starsContainer.appendChild(star);
+
+            }
+
+
+
+            const container = document.querySelector('.container');
+
+            for (let i = 0; i < 20; i++) {
+
+                const heart = document.createElement('div');
+
+                heart.className = 'heart-decoration';
+
+                heart.innerHTML = '♥';
+
+                heart.style.left = Math.random() * 100 + '%';
+
+                heart.style.top = Math.random() * 100 + '%';
+
+                heart.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+                container.appendChild(heart);
+
+            }
+
+        });
+
+    </script>
+
+
+
+</body>
+
+
+
+</html>
